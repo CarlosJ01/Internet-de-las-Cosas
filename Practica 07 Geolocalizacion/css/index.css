@@ -1,0 +1,6 @@
+#mapa {
+    width: 820px;
+    height: 550px;
+    border:solid 2px yellow;
+    background-image: url("http://localhost/IOT/Practica%2007%20Geolocalizacion/img/satelite.png");
+}

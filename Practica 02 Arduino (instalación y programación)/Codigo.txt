@@ -1,0 +1,124 @@
+//Practica 02 - IOT
+//Equipo 7
+//Leds
+int LED[] = {6, 7, 8, 9, 10, 11, 12, 13};
+
+void setup(){
+  //Iniciar los pines
+  for (int i = 0; i < 8; i++) {
+    pinMode(LED[i], OUTPUT);
+  }
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  //Reiniciar los leds
+  for (int i = 0; i < 8; i++) {
+    digitalWrite(LED[i], LOW);
+  }
+  delay(1000);
+  
+  //Pedir Nombre
+  Serial.println("Ingresa tu nombre(en minusculas): ");
+  while(Serial.available()==0){}
+  char letra = Serial.read();
+  Serial.println(letra);
+    
+  //Codigo ASCII de la letra 
+  int numero = 0;
+  switch(letra){
+    case 'a':
+    	numero = 97;
+    break;
+    case 'b':
+    	numero = 98;
+    break;
+    case 'c':
+    	numero = 99;
+    break;
+    case 'd':
+    	numero = 100;
+    break;
+    case 'e':
+    	numero = 101;
+    break;
+    case 'f':
+    	numero = 102;
+    break;
+    case 'g':
+    	numero = 103;
+    break;
+    case 'h':
+    	numero = 104;
+    break;
+    case 'i':
+    	numero = 105;
+    break;
+    case 'j':
+    	numero = 106;
+    break;
+    case 'k':
+    	numero = 107;
+    break;
+    case 'l':
+    	numero = 108;
+    break;
+    case 'm':
+    	numero = 109;
+    break;
+    case 'n':
+    	numero = 110;
+    break;
+    case 'ñ':
+    	numero = 164;
+    break;
+    case 'o':
+    	numero = 111;
+    break;
+    case 'p':
+    	numero = 112;
+    break;
+    case 'q':
+    	numero = 113;
+    break;
+    case 'r':
+    	numero = 114;
+    break;
+    case 's':
+    	numero = 115;
+    break;
+    case 't':
+    	numero = 116;
+    break;
+    case 'u':
+    	numero = 117;
+    break;
+    case 'v':
+    	numero = 118;
+    break;
+    case 'w':
+    	numero = 119;
+    break;
+    case 'x':
+    	numero = 120;
+    break;
+    case 'y':
+    	numero = 121;
+    break;
+    case 'z':
+    	numero = 122;
+    break;
+  }
+  
+  //Mostrar ASCII en Binario por los leds
+  for (int i = 0; i < 8; i++) {
+    if (numero % 2 == 1) { 
+      digitalWrite(LED[i], HIGH);
+    } else {
+      digitalWrite(LED[i], LOW);
+    }
+    numero = numero/2;
+  }
+  delay(5000);
+}

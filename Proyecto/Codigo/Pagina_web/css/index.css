@@ -1,0 +1,12 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    margin-top: 5em;
+}
+
+.temperatura{
+    font-size: 5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
